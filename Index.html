@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sharon Nyambura Juma | Web Developer</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f7f9fc;
+      color: #222;
+    }
+
+    header {
+      background: #071a3d;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #36d1dc;
+    }
+
+    .hero {
+      min-height: 90vh;
+      background: linear-gradient(135deg, #071a3d, #123f7a);
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 70px 7%;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #36d1dc;
+    }
+
+    .hero h2 {
+      font-size: 25px;
+      margin-bottom: 20px;
+      font-weight: normal;
+    }
+
+    .hero p {
+      font-size: 17px;
+      max-width: 680px;
+      margin-bottom: 30px;
+      color: #e4ebf5;
+    }
+
+    .buttons a {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .primary {
+      background: #36d1dc;
+      color: #071a3d;
+    }
+
+    .secondary {
+      border: 1px solid white;
+      color: white;
+    }
+
+    section {
+      padding: 70px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      color: #071a3d;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about-content {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      font-size: 17px;
+      color: #555;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+    }
+
+    .card h3 {
+      color: #071a3d;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #666;
+    }
+
+    .icon {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .projects {
+      background: white;
+    }
+
+    .project-card {
+      background: #f7f9fc;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .project-top {
+      background: #071a3d;
+      color: white;
+      padding: 28px;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .project-body {
+      padding: 25px;
+    }
+
+    .project-body h3 {
+      color: #071a3d;
+      margin-bottom: 10px;
+    }
+
+    .project-body p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .project-body ul {
+      padding-left: 20px;
+      color: #555;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .skill {
+      background: #071a3d;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 14px;
+    }
+
+    .education {
+      background: #f7f9fc;
+    }
+
+    .education-box {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-left: 5px solid #36d1dc;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+      border-radius: 10px;
+    }
+
+    .education-box h3 {
+      color: #071a3d;
+      margin-bottom: 7px;
+    }
+
+    .contact {
+      background: #071a3d;
+      color: white;
+    }
+
+    .contact .section-title h2 {
+      color: white;
+    }
+
+    .contact .section-title p {
+      color: #d9e2f0;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact-item {
+      margin: 15px 0;
+      font-size: 17px;
+    }
+
+    .contact-item a {
+      color: #36d1dc;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #041127;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 28px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      z-index: 2000;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 6px;
+        font-size: 12px;
+      }
+
+      .hero {
+        text-align: center;
+        min-height: 80vh;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero h2 {
+        font-size: 21px;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Sharon Nyambura</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <h1>Hello, I'm <span>Sharon</span></h1>
+
+      <h2>Web Developer | ICT Professional | Networking Enthusiast</h2>
+
+      <p>
+        I create professional, responsive and user-friendly websites
+        for businesses, organizations and individuals. I combine my
+        ICT knowledge with creativity to build practical digital solutions.
+      </p>
+
+      <div class="buttons">
+        <a href="#projects" class="primary">View My Projects</a>
+
+        <a href="https://wa.me/254725977702?text=Hello%20Sharon,%20I%20would%20like%20to%20discuss%20a%20website%20project."
+           class="secondary">
+          Contact Me
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <div class="section-title">
+      <h2>About Me</h2>
+      <p>Get to know me</p>
+    </div>
+
+    <div class="about-content">
+
+      <p>
+        I am Sharon Nyambura Juma, an ICT professional from Kenya with
+        an interest in web development, networking and IT support.
+      </p>
+
+      <br>
+
+      <p>
+        I have experience creating websites using HTML, CSS and JavaScript.
+        I enjoy developing websites that are not only attractive but also
+        easy for customers to navigate and use.
+      </p>
+
+      <br>
+
+      <p>
+        My goal is to continue growing in technology, gain more practical
+        experience and create digital solutions that help businesses and
+        organizations establish a strong online presence.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section id="services">
+
+    <div class="section-title">
+      <h2>My Services</h2>
+      <p>How I can help you</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">💻</div>
+        <h3>Website Development</h3>
+        <p>
+          Professional and responsive websites for businesses,
+          organizations and individuals.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>Website Design</h3>
+        <p>
+          Clean and modern website layouts designed to provide
+          customers with a simple browsing experience.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Mobile-Friendly Websites</h3>
+        <p>
+          Websites designed to work properly on smartphones,
+          tablets and computers.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💬</div>
+        <h3>WhatsApp Integration</h3>
+        <p>
+          Direct WhatsApp communication features that make it easier
+          for customers to contact a business.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎫</div>
+        <h3>Booking Websites</h3>
+        <p>
+          Website interfaces for transport businesses and other
+          services that require customer booking or inquiries.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🛠️</div>
+        <h3>Website Updates</h3>
+        <p>
+          Updating website content, improving layouts and adding
+          basic website features.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+
+    <div class="section-title">
+      <h2>My Projects</h2>
+      <p>Some websites and technology projects I have worked on</p>
+    </div>
+
+    <div class="cards">
+
+      <!-- PROJECT 1 -->
+      <div class="project-card">
+
+        <div class="project-top">
+          🚌
+        </div>
+
+        <div class="project-body">
+
+          <h3>Neno SACCO / Imani Shuttles</h3>
+
+          <p>
+            A transport and parcel-service website designed to provide
+            customers with route information, vehicle options and
+            booking services.
+          </p>
+
+          <ul>
+            <li>Route information</li>
+            <li>Vehicle selection</li>
+            <li>Seat selection concept</li>
+            <li>Booking process</li>
+            <li>Price display</li>
+            <li>WhatsApp communication</li>
+            <li>Receipt/confirmation concept</li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- PROJECT 2 -->
+      <div class="project-card">
+
+        <div class="project-top">
+          🚐
+        </div>
+
+        <div class="project-body">
+
+          <h3>Unique Shuttle / Meru Nissan SACCO</h3>
+
+          <p>
+            A transport website designed to give customers easy access
+            to information about shuttle services and direct communication
+            with the business.
+          </p>
+
+          <ul>
+            <li>Business information</li>
+            <li>Transport services</li>
+            <li>Responsive design</li>
+            <li>Customer contact section</li>
+            <li>Floating WhatsApp button</li>
+            <li>Easy website navigation</li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <!-- PROJECT 3 -->
+      <div class="project-card">
+
+        <div class="project-top">
+          🔐
+        </div>
+
+        <div class="project-body">
+
+          <h3>AI Cloud-Driven Security System</h3>
+
+          <p>
+            An academic technology project focused on improving the
+            protection of company data and credentials in cloud environments.
+          </p>
+
+          <ul>
+            <li>Project proposal</li>
+            <li>Case study development</li>
+            <li>Front-end contribution</li>
+            <li>Back-end contribution</li>
+            <li>Project documentation</li>
+            <li>Cloud security concept</li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SKILLS -->
+  <section id="skills">
+
+    <div class="section-title">
+      <h2>My Skills</h2>
+      <p>Technologies and areas I work with</p>
+    </div>
+
+    <div class="skills">
+
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Web Development</div>
+      <div class="skill">Networking</div>
+      <div class="skill">IT Support</div>
+      <div class="skill">Data Entry</div>
+      <div class="skill">Website Deployment</div>
+      <div class="skill">Basic Troubleshooting</div>
+
+    </div>
+  </section>
+
+
+  <!-- EDUCATION -->
+  <section class="education">
+
+    <div class="section-title">
+      <h2>Education</h2>
+      <p>My academic background</p>
+    </div>
+
+    <div class="education-box">
+
+      <h3>Bachelor of Science in Computer Science</h3>
+
+      <p>
+        Kiriiri Women’s University of Science and Technology
+      </p>
+
+      <p>
+       2nd class Upper division
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <div class="section-title">
+
+      <h2>Let's Work Together</h2>
+
+      <p>
+        Have a website project or need help establishing your business online?
+        Get in touch with me.
+      </p>
+
+    </div>
+
+    <div class="contact-box">
+
+      <div class="contact-item">
+        📞 <strong>Phone:</strong>
+        <a href="tel:+254725977702">0725 977 702</a>
+      </div>
+
+      <div class="contact-item">
+        💬 <strong>WhatsApp:</strong>
+        <a href="https://wa.me/254725977702?text=Hello%20Sharon,%20I%20would%20like%20to%20discuss%20a%20website%20project.">
+          Chat with me on WhatsApp
+        </a>
+      </div>
+      <div class="contact-item">
+           <strong>Email</strong>
+        <a href="email:sharonnyambura983@gmail.com">sharonnyambura983@gmail.com</a>
+      </div>
+      <br>
+
+      <p>
+        Website Development • ICT • Networking • IT Support
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © 2026 Sharon Nyambura Juma. All Rights Reserved.
+    </p>
+
+    <p>
+      Web Developer | ICT Professional
+    </p>
+
+  </footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/254725977702?text=Hello%20Sharon,%20I%20would%20like%20to%20discuss%20a%20website%20project."
+    target="_blank"
+    aria-label="Chat with Sharon on WhatsApp">
+    💬
+  </a>
+
+</body>
+</html>
